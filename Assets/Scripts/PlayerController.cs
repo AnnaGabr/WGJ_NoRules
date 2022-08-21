@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
             vidas[0].sprite = corazonLleno;
             vidas[1].sprite = corazonLleno;
             vidas[2].sprite = corazonLleno;
+            life = 3;
         }
     }
 
