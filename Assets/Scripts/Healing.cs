@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
-public class ObjectDialogue : MonoBehaviour
+public class Healing : MonoBehaviour
 {
     public GameObject player;
     private float minDist = 0.5f;
@@ -13,7 +12,6 @@ public class ObjectDialogue : MonoBehaviour
     private bool interactionFlag;
     public Sprite interactionImage;
     public Sprite nonInteractionImage;
-
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +28,12 @@ public class ObjectDialogue : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 FindObjectOfType<DialogueUI>().ShowDialogue(dialogue);
-                 audioManager.PlayAudio(0, 0.5f);
+                audioManager.PlayAudio(1, 0.5f);
 
-                FindObjectOfType<PlayerController>().TakeDamage(1);
+                FindObjectOfType<PlayerController>().Heal(1);
             }
-        } else
+        }
+        else
         {
             interactionFlag = false;
         }
@@ -46,7 +45,8 @@ public class ObjectDialogue : MonoBehaviour
         if (activ)
         {
             GetComponent<SpriteRenderer>().sprite = interactionImage;
-        } else
+        }
+        else
         {
             GetComponent<SpriteRenderer>().sprite = nonInteractionImage;
         }
