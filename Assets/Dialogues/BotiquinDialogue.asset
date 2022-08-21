@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5718421854d4bd042b4bf7c78cc16c2f, type: 3}
-  m_Name: WaterDialogue
+  m_Name: BotiquinDialogue
   m_EditorClassIdentifier: 
-  title: "\xA1El agua da vida!"
-  dialogue: "\xA1No creas todo lo que te digan!"
+  title: "\xA1Cuidado!"
+  dialogue: "\xA1No todo es lo que parece!"

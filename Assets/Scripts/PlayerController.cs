@@ -50,27 +50,37 @@ public class PlayerController : MonoBehaviour
 
         if (dead)
         {
-            vidas[0].sprite = corazonLleno;
-            vidas[1].sprite = corazonLleno;
-            vidas[2].sprite = corazonLleno;
-            life = 3;
+            foreach (var vida in vidas)
+            {
+                vida.sprite = corazonLleno;
+            }
+            life = vidas.Length;
         }
+        
     }
 
     public void TakeDamage(int d)
     {
+        Debug.Log(life);
         life -= d;
         vidas[life].sprite = corazonVacio;
         if (life < 1)
         {
             dead = true;
         }
+        Debug.Log(life);
 
-    }
+    } 
 
     public void Heal(int d)
     {
-        vidas[life].sprite = corazonLleno;
-        life += d;
+        Debug.Log(life);
+        if (life < 3)
+        {
+            vidas[life].sprite = corazonLleno;
+            life += d;
+        }
+        Debug.Log(life);
+
     }
 }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5718421854d4bd042b4bf7c78cc16c2f, type: 3}
   m_Name: CatDIalogue
   m_EditorClassIdentifier: 
-  title: CatDialogue
-  dialogue: CatDIalogue
+  title: 
+  dialogue: Miau

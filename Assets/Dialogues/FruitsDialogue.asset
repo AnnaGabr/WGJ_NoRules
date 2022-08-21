@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5718421854d4bd042b4bf7c78cc16c2f, type: 3}
   m_Name: FruitsDialogue
   m_EditorClassIdentifier: 
-  title: DruitDialogue
-  dialogue: FruitsDialogue
+  title: "\xA1Cuidado!"
+  dialogue: No todo es lo que parece
