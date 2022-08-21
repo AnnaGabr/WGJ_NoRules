@@ -28,10 +28,10 @@ public class Hurting : MonoBehaviour
             interactionFlag = true;
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                FindObjectOfType<DialogueUI>().ShowDialogue(dialogue);
-                audioManager.PlayAudio(2, 0.5f);
                 lifeFlag = !lifeFlag;
                 doSomething(lifeFlag);
+                FindObjectOfType<DialogueUI>().ShowDialogue(dialogue);
+                audioManager.PlayAudio(2, 0.5f);
             }
         }
         else

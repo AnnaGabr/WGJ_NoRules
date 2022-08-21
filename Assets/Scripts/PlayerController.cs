@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public Sprite corazonLleno;
     public Sprite corazonVacio;
     public Image[] vidas;
+    public DialogueObject loseDialogue;
+    private AudioManager audioManager;
 
     // Animación
     private Animator playerAnimator;
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
             vida.sprite = corazonLleno;
         }
         playerAnimator = GetComponent<Animator>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -50,37 +53,40 @@ public class PlayerController : MonoBehaviour
 
         if (dead)
         {
-            foreach (var vida in vidas)
+            FindObjectOfType<DialogueUI>().ShowDialogue(loseDialogue);
+            audioManager.PlayAudio(3, 0.5f);
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                vida.sprite = corazonLleno;
+                foreach (var vida in vidas)
+                {
+                    vida.sprite = corazonLleno;
+                }
+                life = vidas.Length;
+                if (Input.GetKeyDown(KeyCode.Space)) ;
             }
-            life = vidas.Length;
+            dead = false;
         }
         
     }
 
     public void TakeDamage(int d)
     {
-        Debug.Log(life);
         life -= d;
         vidas[life].sprite = corazonVacio;
         if (life < 1)
         {
             dead = true;
         }
-        Debug.Log(life);
 
     } 
 
     public void Heal(int d)
     {
-        Debug.Log(life);
         if (life < 3)
         {
             vidas[life].sprite = corazonLleno;
             life += d;
         }
-        Debug.Log(life);
 
     }
 }
