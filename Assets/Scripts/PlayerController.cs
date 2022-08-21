@@ -11,12 +11,15 @@ public class PlayerController : MonoBehaviour
     public float speed = 2.0f;
 
     // Vida
-
     private int life;
     private bool dead = false;
     public Sprite corazonLleno;
     public Sprite corazonVacio;
     public Image[] vidas;
+
+    // Animación
+    private Animator playerAnimator;
+    private Vector2 movement;
 
 
     // Start is called before the first frame update
@@ -27,6 +30,7 @@ public class PlayerController : MonoBehaviour
         {
             vida.sprite = corazonLleno;
         }
+        playerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -37,6 +41,12 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate(Vector2.right * Time.deltaTime * horizontalInput * speed);
         transform.Translate(Vector2.up * Time.deltaTime * verticalInput * speed);
+
+        movement = new Vector2(horizontalInput, verticalInput).normalized;
+
+        playerAnimator.SetFloat("Horizontal", horizontalInput);
+        playerAnimator.SetFloat("Vertical", verticalInput);
+        playerAnimator.SetFloat("Speed", movement.sqrMagnitude);
 
         if (dead)
         {
