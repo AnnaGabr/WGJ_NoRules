@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WinDialogue
   m_EditorClassIdentifier: 
   title: "\xA1Has ganado!"
-  dialogue: "A trav\xE9s del espejo puedes volver a casa"
+  dialogue: Has encontrado el espejo

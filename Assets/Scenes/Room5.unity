@@ -598,6 +598,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c0d0509fc9da7c14c9570124c98d6d4e, type: 3}
   - {fileID: 8300000, guid: 787ddcf74cfa52b49ba57159fa0fbc2f, type: 3}
   - {fileID: 8300000, guid: 69cc666c15fc3934ebcf2fb4402aea70, type: 3}
+  - {fileID: 8300000, guid: 0171951d317585d4eb30050630bbd09c, type: 3}
 --- !u!4 &165365288
 Transform:
   m_ObjectHideFlags: 0
@@ -623,6 +624,7 @@ GameObject:
   m_Component:
   - component: {fileID: 174713022}
   - component: {fileID: 174713023}
+  - component: {fileID: 174713024}
   m_Layer: 0
   m_Name: ropero_0
   m_TagString: Untagged
@@ -697,6 +699,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &174713024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174713021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: babca398b685a2d4c9a752ab864575e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1982309774}
+  dialogue: {fileID: 11400000, guid: 8d225cd9293f6a448a3ce0529c4ceab2, type: 2}
+  interactionImage: {fileID: -1271809670, guid: 0c403eba1f17ea0489176556911ed2e6, type: 3}
+  nonInteractionImage: {fileID: 112579194, guid: 0c403eba1f17ea0489176556911ed2e6, type: 3}
+  finalImage: {fileID: 1285989232, guid: 0c403eba1f17ea0489176556911ed2e6, type: 3}
 --- !u!1 &198386680
 GameObject:
   m_ObjectHideFlags: 0
@@ -13438,6 +13457,7 @@ MonoBehaviour:
   - {fileID: 1635466885}
   - {fileID: 71064290}
   - {fileID: 1857945063}
+  loseDialogue: {fileID: 11400000, guid: d2f4fe771f5e43a46a9df23ab627c4cc, type: 2}
 --- !u!212 &1982309778
 SpriteRenderer:
   m_ObjectHideFlags: 0
