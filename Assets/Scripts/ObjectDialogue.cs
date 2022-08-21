@@ -31,8 +31,6 @@ public class ObjectDialogue : MonoBehaviour
             {
                 FindObjectOfType<DialogueUI>().ShowDialogue(dialogue);
                  audioManager.PlayAudio(0, 0.5f);
-
-                FindObjectOfType<PlayerController>().TakeDamage(1);
             }
         } else
         {
