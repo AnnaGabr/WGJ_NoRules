@@ -12,6 +12,7 @@ public class Hurting : MonoBehaviour
     private bool interactionFlag;
     public Sprite interactionImage;
     public Sprite nonInteractionImage;
+    private bool lifeFlag = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +30,8 @@ public class Hurting : MonoBehaviour
             {
                 FindObjectOfType<DialogueUI>().ShowDialogue(dialogue);
                 audioManager.PlayAudio(2, 0.5f);
-
-                FindObjectOfType<PlayerController>().TakeDamage(1);
+                lifeFlag = !lifeFlag;
+                doSomething(lifeFlag);
             }
         }
         else
@@ -49,6 +50,14 @@ public class Hurting : MonoBehaviour
         else
         {
             GetComponent<SpriteRenderer>().sprite = nonInteractionImage;
+        }
+    }
+
+    private void doSomething(bool flag)
+    {
+        if (flag)
+        {
+            FindObjectOfType<PlayerController>().TakeDamage(1);
         }
     }
 }

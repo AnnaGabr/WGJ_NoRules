@@ -12,6 +12,7 @@ public class Healing : MonoBehaviour
     private bool interactionFlag;
     public Sprite interactionImage;
     public Sprite nonInteractionImage;
+    private bool lifeFlag = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +30,8 @@ public class Healing : MonoBehaviour
             {
                 FindObjectOfType<DialogueUI>().ShowDialogue(dialogue);
                 audioManager.PlayAudio(1, 0.5f);
-
-                FindObjectOfType<PlayerController>().Heal(1);
+                lifeFlag = !lifeFlag;
+                doSomething(lifeFlag); 
             }
         }
         else
@@ -51,4 +52,12 @@ public class Healing : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = nonInteractionImage;
         }
     }
+    private void doSomething(bool flag)
+    {
+        if (flag)
+        {
+            FindObjectOfType<PlayerController>().Heal(1);
+        }
+    }
+
 }
